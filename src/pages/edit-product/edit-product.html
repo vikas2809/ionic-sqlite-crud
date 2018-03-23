@@ -1,0 +1,74 @@
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{ product.product_name }}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <form>
+      <ion-item>
+          <ion-label stacked>
+              Name
+          </ion-label>
+          <ion-input [(ngModel)]="product_name" name="product_name" disabled></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>
+            UPC
+          </ion-label>
+          <ion-input [(ngModel)]="upc" name="upc" value="{{upc}}"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>
+            Quantity
+          </ion-label>
+          <ion-input [(ngModel)]="quantity" name="quantity"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+              <ion-label stacked>
+                Price
+              </ion-label>
+              <ion-input [(ngModel)]="price" name="price"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+                <ion-label stacked>
+                  Size
+                </ion-label>
+                <ion-input [(ngModel)]="item_size" name="item_size"></ion-input>
+              </ion-item>
+  
+     
+          
+                
+               
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                          <button ion-button block (click)="onDelete()">Delete</button>
+                        </ion-col>
+                        <ion-col text-center>
+                            <button ion-button block color="secondary" (click)="updateProduct()">update</button>
+                          </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        <button ion-button block outline (click)="onLeave()">Leave</button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+
+  
+                </form>
+  
+  
+  </ion-content>
+  
+  

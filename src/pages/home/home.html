@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+
+      <ion-buttons right>
+          <button ion-button icon-only (click)="pushPage()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+      </ion-buttons>
+
+    <ion-title text-center>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-grid>
+   <ion-row>
+     <ion-col>
+      <ion-list>
+        <button ion-item *ngFor="let product of products" (click)="productSelected(product)">
+          {{ product.product_name }}
+        </button>  
+      </ion-list>
+      <!-- <ion-list>
+        <ion-item *ngFor="let dev of developers">
+          <h2>{{dev.name}}</h2>
+          <p>{{ dev.yearsofExperience }} years of {{ dev.skill }} Experience!</p>
+        </ion-item>
+      </ion-list>-->
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+</ion-content>

@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS product(id INTEGER PRIMARY KEY AUTOINCREMENT, product_name TEXT, upc TEXT, quantity INTEGER,price INTEGER,item_size INTEGER);

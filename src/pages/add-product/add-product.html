@@ -1,0 +1,119 @@
+<ion-header>
+
+  <ion-navbar text-center>
+    <ion-title>Add Product</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ 
+        <form #f="ngForm">
+
+            <ion-list>
+                <ion-item>
+                  <ion-label fixed>Name</ion-label>
+                  <ion-input
+                      type="text"
+                      placeholder="Bread"
+                      name="product_name"
+                      ngModel
+                      required></ion-input>
+                </ion-item>
+              </ion-list>
+              
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                          <ion-list>
+                              <ion-item>
+                          <ion-label floating>
+                              UPC
+                            </ion-label>
+                            <ion-input
+                              type="text"
+                              name="upc"
+                              ngModel
+                              required></ion-input>
+                              </ion-item>
+                              </ion-list>
+                      </ion-col>
+                      <ion-col>
+                        <button ion-button icon-only block (click)="openCameraScanner()">
+                            upc
+                            <ion-icon name="add"></ion-icon>
+                        </button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                   
+                <ion-list>
+                <ion-item>
+                  <ion-label fixed>
+                    Quantity
+                  </ion-label>
+                  <ion-input
+                    type="number"
+                    name="quantity"
+                    ngModel
+                    required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label fixed>
+                      Price
+                    </ion-label>
+                    <ion-input
+                      type="number"
+                      name="price"
+                      ngModel
+                      required></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-label fixed>
+                        Size
+                      </ion-label>
+                      <ion-input
+                        type="number"
+                        name="item_size"
+                        ngModel
+                        required></ion-input>
+                    </ion-item>
+
+                  </ion-list>
+                  
+                 
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+
+                                <button
+                                  ion-button
+                                  color="secondary"
+                                  block
+                                  type="button"
+                                  (click)="onSubmit(f)"
+                                  [disabled]="!f.valid">
+                                  Add this Product
+                                </button>
+                    
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                         <ion-list>
+                            <button ion-item *ngFor="let product of products" (click)="productSelected(product)">
+                              <h2>{{product.product_name}}</h2>
+                              <p>Quantity: {{ product.quantity }} & Price:  {{ product.price }}</p>
+                            </button>
+                        </ion-list>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+
+        </form>
+
+</ion-content>
+
